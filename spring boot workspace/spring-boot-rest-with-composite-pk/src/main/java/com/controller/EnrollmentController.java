@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,10 +38,9 @@ public class EnrollmentController {
 		return enrollmentService.addEnrollment(enrollment);
 	}
 
-	// http://localhost:8080/deleteenrollemnt/1
-	@RequestMapping(value = "deleteenrollemnt/{ek}",	//Need to check how to do this
-			method = RequestMethod.DELETE)
-	public String deleteEnrollment(@PathVariable("ek") EnrollmentKey ek) {
-		return enrollmentService.deleteEnrollemnt(ek);
+	// http://localhost:8080/deleteenrollemnt/1/1
+	@RequestMapping(value = "deleteenrollment/{sid}/{cid}")
+	public String deleteEnrollment(@PathVariable("sid") int sid, @PathVariable("cid") int cid) {
+		return enrollmentService.deleteEnrollment(sid, cid);
 	}
 }

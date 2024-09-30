@@ -10,6 +10,8 @@ import com.entity.Enrollment;
 import com.entity.EnrollmentKey;
 import com.repository.EnrollmentRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class EnrollmentService {
 
@@ -30,7 +32,10 @@ public class EnrollmentService {
 		}
 	}
 	
-	public String deleteEnrollemnt(EnrollmentKey ek) {
+	public String deleteEnrollment(int sid, int cid) {
+		EnrollmentKey ek = new EnrollmentKey();
+		ek.setCid(cid);
+		ek.setSid(sid);
 		Optional<Enrollment> result = enrollmentRepository.findById(ek);
 		if(result.isPresent()) {
 			enrollmentRepository.deleteById(ek);
