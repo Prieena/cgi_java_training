@@ -68,6 +68,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Administrator\JAVA training workspace\spring boot workspace\spring-boot-rest-with-composite-pk"/>
 			<item value="C:\Users\Administrator\spring boot workspace\spring-boot-restapi-with-datab-relationship"/>
 			<item value="C:\Users\Administrator\spring boot workspace\spring-rest-api"/>
 			<item value="C:\Users\Administrator\spring boot workspace\spring-boot-with-data-assgnment3"/>
