@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Check Balance Page</h2>
+<form th:object="${acc}"  th:action="@{/checkbalance}" method="post">
+	<label>Account Number</label>
+	<input type="number" th:field="*{accno}" ><br/>
+	<input type="submit" value="Check Balance" name="submitButton"/>
+	<input type="reset" value="reset"/><br/><br/>
+</form>
+<span th:text="${msg}" style="color:red"></span><br/>
+<a href="createaccpage">Create Account</a><br/>
+<a href="depositpage">Deposit</a><br/>
+<a href="withdrawpage">Withdraw</a><br/>
+</body>
+</html>

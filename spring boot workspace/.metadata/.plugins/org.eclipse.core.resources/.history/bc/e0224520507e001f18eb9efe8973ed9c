@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Create Account</h2>
+<span th:text="${msg}" style="color:red"></span>
+<form th:object="${acc}"  th:action="@{/depositamount}" method="post">
+	<label>Account Number</label>
+	<input type="number" th:field="*{accno}" ><br/>
+	<label>Amount</label>
+	<input type="number" th:field="*{amount}"><br/>
+	<input type="submit" value="Deposit Account" name="submitButton"/>
+	<input type="reset" value="reset"/><br/>
+</form>
+<a href="createaccpage">Create Account</a><br/>
+<a href="withdraw">Withdraw</a><br/>
+<a href="checkbalance">Check Balance</a>
+</body>
+</html>

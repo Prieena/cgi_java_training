@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.service.Depsrtment&apos; to &apos;Department&apos;&#x0D;&#x0A;- Original project: &apos;package_app&apos;&#x0D;&#x0A;- Original element: &apos;com.service.Depsrtment&apos;&#x0D;&#x0A;- Renamed element: &apos;com.service.Department&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Depsrtment&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.service{Depsrtment.java[Depsrtment" matchStrategy="1" name="Department" qualified="false" references="true" similarDeclarations="false" stamp="1724880300308" textual="false" version="1.0"/>
+</session>

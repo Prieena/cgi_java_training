@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Create Account</h2>
+<span th:text="${msg}" style="color:red"></span>
+<form th:object="${emp}"  th:action="@{/createacc}" method="post">
+	<label>Account Number</label>
+	<input type="number" th:field="*{accno}" th:readonly="${readonly}"><br/>
+	<label>Name</label>
+	<input type="text" th:field="*{name}" th:readonly="${readonly}"><br/>
+	<label>Amount</label>
+	<input type="number" th:field="*{amount}"><br/>
+	<input type="submit" value="Create Account" name="submitButton"/>
+	<input type="reset" value="reset"/>
+</form>
+</body>
+</html>

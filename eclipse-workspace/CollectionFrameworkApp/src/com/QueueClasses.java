@@ -1,0 +1,24 @@
+package com;
+
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class QueueClasses {
+
+	public static void main(String[] args) {
+	// priority queue 
+	Queue q1 = new PriorityQueue();	
+	q1.add(2);q1.add(5);q1.add(1);q1.add(6);
+	// linkedlist queue 
+	Queue q2 = new LinkedList();
+	q2.add(2);q2.add(5);q2.add(1);q2.add(6);
+	System.out.println(q1);
+	System.out.println(q2);
+	System.out.println(q1.poll());
+	System.out.println(q2.poll());
+	System.out.println(q1);
+	System.out.println(q2);
+	}
+
+}

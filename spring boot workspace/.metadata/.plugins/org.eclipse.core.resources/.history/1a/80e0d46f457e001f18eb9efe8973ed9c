@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="createacc">Create Account</a>
+<a href="deposit">Deposit</a>
+<a href="withdraw">Withdraw</a>
+<a href="checkbalance">Check Balance</a>
+</body>
+</html>

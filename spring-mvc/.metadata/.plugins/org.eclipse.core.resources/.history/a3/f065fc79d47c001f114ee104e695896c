@@ -1,0 +1,32 @@
+package com.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bean.User;
+import com.dao.LoginDao;
+
+@Service								// Service layer annotation 
+public class LoginService {
+	//private ProductDao pd = new ProductDao();
+	
+	@Autowired
+	LoginDao productDao;
+	
+	public String addUser(User user) {
+		if(!user.getEmailId().contains("@")) {
+			return "Enter valid email";
+		}else if(productDao.addUser(user)>0) {
+			return "Product details stored in database";
+		}else {
+			return "Product didn't store";
+		}
+	}
+	
+	
+//	public List<Map<String,Object>> retrieveAllProductsAsListOfMap() {
+//		return productDao.retrieveAllProductsAsListOfMap();
+//	}
+	
+	
+}

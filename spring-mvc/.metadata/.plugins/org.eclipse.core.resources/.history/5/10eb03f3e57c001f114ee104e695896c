@@ -1,0 +1,52 @@
+package com.service;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bean.User;
+import com.dao.LoginDao;
+
+@Service								// Service layer annotation 
+public class LoginService {
+	//private ProductDao pd = new ProductDao();
+	
+	@Autowired
+	LoginDao loginDao;
+	
+	public int addUser(User user) {
+		if(!user.getEmailId().contains("@")) {
+			return 0;
+		}else if(loginDao.addUser(user)>0) {
+			return 1;
+		}else {
+			return 0;
+		}
+	}
+	
+	public int loginUser(User user) {
+		List<User> listOfUsers = loginDao.retrieveAllUsers();
+		boolean existingUser = listOfUsers.stream().anyMatch(userCheck -> userCheck.getEmailId() == user.getEmailId());
+//		for (User userCheck: listOfUsers) {
+//			if (userCheck.getEmailId() == user.getEmailId()) {
+//				existingUser = true;
+//				break;
+//			}
+//		}
+		if(listOfUsers.size() < 1) {
+			return 0;
+		}
+		if (existingUser == true) {
+			return 0;
+		} else return 1;
+	}
+	
+	
+//	public List<Map<String,Object>> retrieveAllProductsAsListOfMap() {
+//		return productDao.retrieveAllProductsAsListOfMap();
+//	}
+	
+	
+}

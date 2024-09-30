@@ -1,0 +1,47 @@
+package com.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.bean.Account;
+import com.bean.Employee;
+import com.service.AccountService;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+public class AccountController {
+
+	@Autowired
+	AccountService accountService;
+	
+	@RequestMapping(value = "/",method = RequestMethod.GET)
+	public String openIndexPage() {   // DI
+		return "index";
+	}
+	@RequestMapping(value = "/createaccpage",method = RequestMethod.POST)
+	public String storeEmployee(Model model,Account account,HttpServletRequest req) {   // DI
+		String result = "";
+//		String butonValue = req.getParameter("submitButton");
+//		if(butonValue.equals("Store Employee")) {
+//			result = employeeService.storeEmployee(employee);
+//			System.out.println(result);	
+//		}else {
+		// result = employeeService.updateEmployeeById(employee);
+		// model.addAttribute("buttonValue", "Store Employee");
+		}
+//		List<Employee> listOfEmployee = employeeService.findAllEmployees();
+//		model.addAttribute("listofemployee", listOfEmployee);
+//		model.addAttribute("msg", result);
+//			employee.setEid(0);
+//			employee.setEname("");
+//			employee.setSalary(0.0f);
+//		model.addAttribute("emp", employee);
+		return "createaccpage";
+	}
+}

@@ -1,0 +1,57 @@
+package com.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MyController {
+
+	@RequestMapping(value = "login",method = RequestMethod.GET)
+	public ModelAndView sayHello() {
+		System.out.println("I Came Here in hello method");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("login.jsp");
+		return mav;
+	}
+	
+	@RequestMapping(value = "signup")
+	public ModelAndView sayHi() {
+		System.out.println("I Came Here in hi method");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("signup.jsp");
+		return mav;
+	}
+	
+	@RequestMapping(value = "loginuser",method = RequestMethod.POST)  // di for request object 
+	public ModelAndView loginUser(HttpServletRequest req) {
+		String emailid = req.getParameter("emailid");
+		String password = req.getParameter("password");
+		String typeOfUser = req.getParameter("typeofuser");
+		ModelAndView mav = new ModelAndView();
+		if(emailid.equals("akash@gmail.com") && password.equals("123")) {
+			mav.setViewName("success.jsp");
+		}else {
+			mav.setViewName("failure.jsp");
+		}
+		return mav;
+	}
+	
+	@RequestMapping(value = "signupuser",method = RequestMethod.POST)  // di for request object 
+	public ModelAndView signUpUser(HttpServletRequest req) {
+		String emailid = req.getParameter("emailid");
+		String password = req.getParameter("password");
+		String typeOfUser = req.getParameter("typeofuser");
+		ModelAndView mav = new ModelAndView();
+		if(emailid.equals("akash@gmail.com") && password.equals("123")) {
+			mav.setViewName("success.jsp");
+		}else {
+			mav.setViewName("failure.jsp");
+		}
+		return mav;
+	}
+	
+}

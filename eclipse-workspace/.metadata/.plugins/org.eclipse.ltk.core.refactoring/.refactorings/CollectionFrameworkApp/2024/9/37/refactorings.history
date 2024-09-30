@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.ColloectionWithGenerics.java&apos; to &apos;CollectionWithGenerics.java&apos;&#x0D;&#x0A;- Original project: &apos;CollectionFrameworkApp&apos;&#x0D;&#x0A;- Original element: &apos;com.ColloectionWithGenerics.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.CollectionWithGenerics.java&apos;" description="Rename compilation unit &apos;ColloectionWithGenerics.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com{ColloectionWithGenerics.java" name="CollectionWithGenerics.java" references="false" stamp="1725878737112" version="1.0"/>
+</session>

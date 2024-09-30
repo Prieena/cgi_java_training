@@ -1,0 +1,23 @@
+package com.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.bean.User;
+
+@Repository
+public class LoginDao {
+	
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+	public int addUser(User user) {
+		try {
+			return jdbcTemplate.update("insert into login values(?,?,?)", user.getEmailId(),user.getPassword(),user.getTypeOfUser());
+		} catch (Exception e) {
+			System.err.println(e);
+			return 0;
+		}
+		}
+}
